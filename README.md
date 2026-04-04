@@ -99,3 +99,8 @@ Project_PrinciplesOfDataScience/
 | R² | 0.973 | Model explains 97.3% of price variance |
 | RMSE | 3,714 INR | Average prediction error |
 | MAE | 2,326 INR | Typical everyday prediction error |
+
+## Business Impact
+- The model enables stakeholders to predict flight prices within ± 2,326 INR on average, helping to make informed booking decisions. 
+- Airlines can use cluster insights for targeted pricing strategies across four identified market segments.
+- Travel agencies can integrate the Azure ML endpoint to automate fair price alerts for customers.
