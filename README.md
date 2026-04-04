@@ -104,3 +104,18 @@ Project_PrinciplesOfDataScience/
 - The model enables stakeholders to predict flight prices within ± 2,326 INR on average, helping to make informed booking decisions. 
 - Airlines can use cluster insights for targeted pricing strategies across four identified market segments.
 - Travel agencies can integrate the Azure ML endpoint to automate fair price alerts for customers.
+- 
+## Recommendations 
+1.	Expand the Dataset for a Longer Time Range     
+The current dataset covers approximately one month of flight data, which limits the model’s ability to understand seasonal price changes such as holiday peaks, festival periods, or Climatic season fluctuations in India. Using at least a full year of historical flight data in future versions would allow the model to better learn these seasonal trends and deliver more accurate price predictions throughout the year.
+2.	Introduce Booking Lead Time into the Model    
+How far in advance the ticket is purchased plays an important role in flight pricing. However, the current dataset is missing booking dates, so it cannot capture the time gap between booking date and travel date It is recommended to capture the booking date feature in future data collection, as the fares of flights booked weeks prior usually differ significantly from last-minute bookings price.
+3. Include Seat Availability as a Feature    
+Airlines continuously change ticket prices based on how many seats are still available. As more seats get sold (demand increases) then availability(supply) goes down, normally prices go up. This seat availability feature is missing from the current dataset. If included it will improve the model’s accuracy definitely. Accessing airline APIs or using real time data collection methods could help capture seat availability along with price data.
+4.	Deploy Model as a Real-Time Azure ML Endpoint    
+Currently, the trained Random Forest model is stored as a .pkl file in Azure Blob Storage. The next step is to deploy it as a real-time inference endpoint using Azure ML managed online endpoints. This will make the model available as a REST API, so travel agencies, booking sites, and airline systems can get price predictions quickly and programmatically.
+5.	Implement Automated Data Pipeline    
+Right now, collecting data, cleaning, and model training is happening manually using Jupyter notebooks. Automating this process with Azure Data Factory for scheduled data ingestion and Azure ML Pipelines for model retraining would help keep the model up to date with changing pricing patterns and remove the need for manual work. 
+7.	Design a Dashboard for End Users    
+To get the most out of this model, it would help to create a web-based dashboard where travelers and travel agents can enter flight details and get instant price predictions. This dashboard could use Power BI connected to the Azure ML endpoint or be a custom web app hosted on Azure App Service. 
+
