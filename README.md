@@ -43,3 +43,59 @@ Project_PrinciplesOfDataScience/
 ├── .gitignore
 └── README.md
 ```
+
+## Approach
+
+### 1. Data Collection
+- Source: Kaggle Indian Domestic Flights dataset
+- Stored securely in Azure Blob Storage container
+
+### 2. Data Preprocessing (ETL)
+- Add class column to both raw data files and merged economy and business class datasets
+- Cleaned price column (removed comma formatting)
+- Parsed flight duration from string to numeric minutes
+- Cleaned stop column (removed embedded whitespace)
+- Extracted departure and arrival hours from time strings
+- Derived day of week, month, and weekend indicator
+
+### 3. Exploratory Data Analysis
+- Price distribution by airline and class
+- Correlation heatmap across numeric features
+- Boxplot analysis by number of stops per class
+- Average price by departure hour
+- Average price by day of week
+- Date range verification
+
+### 4. Feature Engineering
+- Created time of day buckets (morning/afternoon/evening/night)
+- Mapped stop categories to numeric values (0/1/2)
+- Applied one-hot encoding to categorical columns
+- Dropped irrelevant identifier columns
+
+### 5. Clustering Analysis
+- Applied K-Means clustering
+- Used Elbow Method to identify optimal k=4
+- Standardised features using StandardScaler
+- Identified four clusters are : Budget, Standard Economy, Long Haul Economy, Premium
+
+### 6. Predictive Modelling
+- Algorithm: Random Forest Regressor
+- Train/Test Split: 80% / 20%
+- Hyperparameters: n_estimators=100, max_depth=20
+
+## Results
+
+### Clustering — 4 Price Segments Identified
+| Cluster | Label | 
+|---|---|
+| 3 | Budget Short-Haul | 
+| 0 | Standard Economy | 
+| 2 | Long-Haul Economy | 
+| 1 | Business Premium | 
+
+### Model Performance — Random Forest Regressor
+| Metric | Value | Interpretation |
+|---|---|---|
+| R² | 0.973 | Model explains 97.3% of price variance |
+| RMSE | 3,714 INR | Average prediction error |
+| MAE | 2,326 INR | Typical everyday prediction error |
