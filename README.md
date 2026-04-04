@@ -17,3 +17,28 @@ Flight ticket prices change often because of factors like demand, seasonality, c
 | Airlines | Air India, Vistara, IndiGo, SpiceJet, AirAsia, GO FIRST, TruJet, StarAir |
 | Storage | Microsoft Azure Blob Storage |
 
+## Project Structure
+
+Project_PrinciplesOfDataScience/
+├── notebooks/
+│   ├── 1_etl.ipynb                  # Data cleaning and preprocessing
+│   ├── 2_eda.ipynb                  # Exploratory data analysis
+│   ├── 3_feature_engineering.ipynb  # Feature creation and encoding
+│   ├── 4_clustering.ipynb           # K-Means clustering analysis
+│   └── 5_model.ipynb                # Model training and evaluation
+├── reports/
+│   ├── price_distribution.png
+│   ├── price_by_weekday.png
+│   ├── price_by_stops_class.png
+│   ├── price_by_departure_hour.png
+│   ├── correlation_heatmap.png
+│   └── airline_prices.png
+├── data/
+│   ├── raw_data/  
+|       ├── business.csv              # Raw CSV files (stored in Azure Blob)   
+|       ├── economy.csv              
+│   └── processed_data/  
+|       ├── flights_clean.csv         # Cleaned data (stored in Azure Blob)
+|       ├── flights_model_ready.csv   # Training ready data (stored in Azure Blob)
+├── .gitignore
+└── README.md
