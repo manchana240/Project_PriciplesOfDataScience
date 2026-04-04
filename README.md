@@ -18,7 +18,7 @@ Flight ticket prices change often because of factors like demand, seasonality, c
 | Storage | Microsoft Azure Blob Storage |
 
 ## Project Structure
-
+```
 Project_PrinciplesOfDataScience/
 ├── notebooks/
 │   ├── 1_etl.ipynb                  # Data cleaning and preprocessing
@@ -42,3 +42,4 @@ Project_PrinciplesOfDataScience/
 |       ├── flights_model_ready.csv   # Training ready data (stored in Azure Blob)
 ├── .gitignore
 └── README.md
+```
